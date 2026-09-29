@@ -27,18 +27,21 @@
             min-height: 100vh;
             padding: 20px;
             overflow-x: hidden;
-            background-color: #2b2b2b;
+            /* Fallback background color matching your theme if video is loading */
+            background: linear-gradient(135deg, #e6dedd, #d0c2c0);
         }
 
-        /* Looping MP4 Video Background Asset */
+        /* Fixed Fullscreen Video Styling */
         #bg-video {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
             z-index: -2;
+            object-fit: cover;
         }
 
         /* Falling Petals Canvas Overlay */
@@ -56,10 +59,10 @@
         .invite-container {
             width: 100%;
             max-width: 480px;
-            background: rgba(255, 255, 255, 0.28);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
             border-radius: 28px;
             padding: 40px 25px;
@@ -143,7 +146,7 @@
             padding: 18px 10px;
             border-top: 1px solid rgba(92, 60, 132, 0.25);
             border-bottom: 1px solid rgba(92, 60, 132, 0.25);
-            background: rgba(255, 255, 255, 0.18);
+            background: rgba(255, 255, 255, 0.22);
             border-radius: 12px;
         }
 
@@ -176,7 +179,7 @@
         }
 
         .event-card {
-            background: rgba(255, 255, 255, 0.35);
+            background: rgba(255, 255, 255, 0.4);
             padding: 14px 16px;
             border-radius: 12px;
             margin-bottom: 12px;
@@ -210,8 +213,8 @@
 </head>
 <body>
 
-    <!-- Looping MP4 Video Background Asset -->
-    <video autoplay muted loop playsinline id="bg-video">
+    <!-- Looping MP4 Video Background Asset with forced mobile playback attributes -->
+    <video autoplay muted loop playsinline preload="auto" id="bg-video">
         <source src="background.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
@@ -295,19 +298,19 @@
         resizeCanvas();
 
         const petals = [];
-        const numPetals = 25; // Number of floating petals
+        const numPetals = 22;
 
         for (let i = 0; i < numPetals; i++) {
             petals.push({
                 x: Math.random() * width,
                 y: Math.random() * height - height,
-                size: Math.random() * 8 + 6,
-                speedY: Math.random() * 1.2 + 0.6,
-                speedX: Math.random() * 1 - 0.5,
+                size: Math.random() * 8 + 5,
+                speedY: Math.random() * 1.2 + 0.5,
+                speedX: Math.random() * 0.8 - 0.4,
                 rotation: Math.random() * 360,
                 rotationSpeed: Math.random() * 2 - 1,
                 opacity: Math.random() * 0.5 + 0.4,
-                color: Math.random() > 0.5 ? '#b88fc9' : '#e6a1b4' // Soft orchid purple and rose pink
+                color: Math.random() > 0.5 ? '#b88fc9' : '#e6a1b4'
             });
         }
 
@@ -321,19 +324,15 @@
                 ctx.globalAlpha = p.opacity;
                 ctx.fillStyle = p.color;
 
-                // Draw petal shape
                 ctx.beginPath();
                 ctx.ellipse(0, 0, p.size, p.size / 2, 0, 0, Math.PI * 2);
                 ctx.fill();
-
                 ctx.restore();
 
-                // Move petal downwards with a gentle sway
                 p.y += p.speedY;
                 p.x += Math.sin(p.y * 0.02) + p.speedX;
                 p.rotation += p.rotationSpeed;
 
-                // Reset position when it falls past the screen
                 if (p.y > height + 20) {
                     p.y = -20;
                     p.x = Math.random() * width;
