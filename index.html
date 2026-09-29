@@ -18,10 +18,10 @@
         }
 
         body {
-            /* Animated silk background effect mimicking the video */
-            background: linear-gradient(120deg, #f4f1eb, #e3ded4, #f7f5f0, #e9e4dc);
+            /* Richer, multi-layer animated silk background */
+            background: linear-gradient(135deg, #e8e2d5, #f5f2eb, #d8d0c1, #f0ece1);
             background-size: 400% 400%;
-            animation: silkWave 12s ease infinite;
+            animation: silkFlow 10s ease infinite;
             font-family: 'Poppins', sans-serif;
             color: var(--text-dark);
             display: flex;
@@ -29,33 +29,43 @@
             align-items: center;
             min-height: 100vh;
             padding: 20px;
+            position: relative;
+            overflow-x: hidden;
         }
 
-        /* Keyframes for flowing silk background */
-        @keyframes silkWave {
+        /* Overlay to simulate soft silk light waves */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(106,76,147,0.05) 100%);
+            animation: lightShift 6s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        @keyframes silkFlow {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
+        @keyframes lightShift {
+            0% { opacity: 0.4; transform: scale(1); }
+            100% { opacity: 0.8; transform: scale(1.05); }
+        }
+
         .invite-container {
             width: 100%;
             max-width: 480px;
-            background: rgba(255, 255, 255, 0.78);
-            backdrop-filter: blur(6px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 15px 35px rgba(106, 76, 147, 0.12);
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 15px 35px rgba(106, 76, 147, 0.15);
             border-radius: 20px;
             padding: 40px 25px;
             text-align: center;
             position: relative;
-            overflow: hidden;
-            animation: fadeIn 1.5s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            z-index: 1;
         }
 
         .bismillah {
@@ -74,20 +84,27 @@
             text-transform: uppercase;
         }
 
-        /* Dynamic Guest Greeting Styling */
+        /* Prominent Guest Box */
+        .guest-box {
+            background: rgba(106, 76, 147, 0.06);
+            border: 1px dashed rgba(106, 76, 147, 0.3);
+            border-radius: 12px;
+            padding: 12px;
+            margin: 15px 0 20px 0;
+        }
+
         .guest-greeting {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #666;
-            margin-top: 10px;
+            letter-spacing: 1.5px;
+            color: #777;
         }
 
         .guest-name {
             font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--primary-purple);
-            margin: 8px 0 20px 0;
+            margin-top: 4px;
             font-weight: 600;
         }
 
@@ -141,7 +158,7 @@
         }
 
         .event-card {
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.75);
             padding: 18px;
             border-radius: 12px;
             margin-bottom: 15px;
@@ -179,9 +196,11 @@
 
         <div class="title">Wedding Invitation</div>
         
-        <!-- Dynamic Guest Customizer -->
-        <div class="guest-greeting">We cordially invite</div>
-        <div id="guestNameDisplay" class="guest-name">Our Respected Family & Friends</div>
+        <!-- Dedicated Guest Section -->
+        <div class="guest-box">
+            <div class="guest-greeting">Special Invitation For</div>
+            <div id="guestNameDisplay" class="guest-name">Valued Family & Friends</div>
+        </div>
 
         <div class="subtitle">together with their families</div>
 
@@ -220,17 +239,16 @@
         </div>
 
         <div class="footer-msg">
-            "With hearts full of joy, we warmly invite you to join us in celebrating our wedding."
+            "With hearts full of joy, we warmly invite you and your family to join us in celebrating our wedding."
         </div>
     </div>
 
     <script>
-        // Automatically reads guest name from the link parameters (e.g., ?guest=Uncle+Ahmad)
+        // Automatically reads the guest name from the link (e.g., yoursite.com/?guest=Mr.+Shaan+Malik)
         const urlParams = new URLSearchParams(window.location.search);
         const guestParam = urlParams.get('guest');
         
         if (guestParam) {
-            // Replaces underscores or plus signs with spaces if used in URL
             document.getElementById('guestNameDisplay').innerText = decodeURIComponent(guestParam);
         }
     </script>
