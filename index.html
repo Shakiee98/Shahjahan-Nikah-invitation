@@ -8,9 +8,7 @@
     <style>
         :root {
             --primary-purple: #6a4c93;
-            --light-purple: #9b7ede;
             --text-dark: #333333;
-            --bg-silk: #f4f1eb;
         }
 
         * {
@@ -20,9 +18,10 @@
         }
 
         body {
-            background-color: var(--bg-silk);
-            /* Simulating the soft silk texture background effect */
-            background-image: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(200,195,185,0.2) 100%);
+            /* Animated silk background effect mimicking the video */
+            background: linear-gradient(120deg, #f4f1eb, #e3ded4, #f7f5f0, #e9e4dc);
+            background-size: 400% 400%;
+            animation: silkWave 12s ease infinite;
             font-family: 'Poppins', sans-serif;
             color: var(--text-dark);
             display: flex;
@@ -32,35 +31,64 @@
             padding: 20px;
         }
 
+        /* Keyframes for flowing silk background */
+        @keyframes silkWave {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .invite-container {
             width: 100%;
             max-width: 480px;
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.78);
+            backdrop-filter: blur(6px);
             border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(106, 76, 147, 0.12);
+            border-radius: 20px;
             padding: 40px 25px;
             text-align: center;
             position: relative;
             overflow: hidden;
+            animation: fadeIn 1.5s ease-out;
         }
 
-        /* Bismillah Header */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .bismillah {
             font-family: 'Great Vibes', cursive;
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             color: var(--primary-purple);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .title {
             font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             letter-spacing: 2px;
             color: var(--primary-purple);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             text-transform: uppercase;
+        }
+
+        /* Dynamic Guest Greeting Styling */
+        .guest-greeting {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .guest-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            color: var(--primary-purple);
+            margin: 8px 0 20px 0;
+            font-weight: 600;
         }
 
         .names {
@@ -71,17 +99,16 @@
         }
 
         .subtitle {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 300;
             letter-spacing: 1px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             color: #555;
             text-transform: uppercase;
         }
 
-        /* Quranic Verse Box */
         .verse-section {
-            margin: 30px 0;
+            margin: 25px 0;
             padding: 20px 10px;
             border-top: 1px solid rgba(106, 76, 147, 0.2);
             border-bottom: 1px solid rgba(106, 76, 147, 0.2);
@@ -109,35 +136,34 @@
             font-weight: 500;
         }
 
-        /* Event Details Grid / List */
         .events-section {
-            margin-top: 30px;
+            margin-top: 25px;
         }
 
         .event-card {
-            background: rgba(255, 255, 255, 0.6);
-            padding: 20px;
-            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 18px;
+            border-radius: 12px;
             margin-bottom: 15px;
             border-left: 4px solid var(--primary-purple);
             text-align: left;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
         }
 
         .event-title {
             font-family: 'Cinzel', serif;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--primary-purple);
-            margin-bottom: 5px;
+            margin-bottom: 6px;
             font-weight: 600;
         }
 
         .event-details {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: #444;
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
-        /* Footer Message */
         .footer-msg {
             font-size: 0.85rem;
             color: #555;
@@ -149,28 +175,30 @@
 <body>
 
     <div class="invite-container">
-        <!-- Top Bismillah -->
         <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
 
         <div class="title">Wedding Invitation</div>
-        <div class="subtitle">Together with their families</div>
+        
+        <!-- Dynamic Guest Customizer -->
+        <div class="guest-greeting">We cordially invite</div>
+        <div id="guestNameDisplay" class="guest-name">Our Respected Family & Friends</div>
+
+        <div class="subtitle">together with their families</div>
 
         <div class="names">
             Shaan <br>
-            <span style="font-size: 2rem; font-family: 'Cinzel', serif;">&</span> <br>
+            <span style="font-size: 1.8rem; font-family: 'Cinzel', serif;">&</span> <br>
             Dr. Safiya
         </div>
 
         <div class="subtitle">Invite you to their wedding <br><span style="font-size: 0.8rem;">وذلك بمشيئة الله</span></div>
 
-        <!-- Quranic Verse -->
         <div class="verse-section">
-            <div class="arabic-text">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَWَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِقَوْمٍ يَتَفَكَّرُونَ</div>
+            <div class="arabic-text">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِقَوْمٍ يَتَفَكَّرُونَ</div>
             <div class="verse-translation">"And of His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy. Indeed in that are signs for a people who give thought."</div>
             <div class="verse-ref">[Ar-Rum: 21]</div>
         </div>
 
-        <!-- Events Schedule -->
         <div class="events-section">
             <div class="event-card">
                 <div class="event-title">💍 Nikah Ceremony</div>
@@ -192,9 +220,19 @@
         </div>
 
         <div class="footer-msg">
-            "With hearts full of joy, we warmly invite you and your family to join us in celebrating our wedding."
+            "With hearts full of joy, we warmly invite you to join us in celebrating our wedding."
         </div>
     </div>
 
+    <script>
+        // Automatically reads guest name from the link parameters (e.g., ?guest=Uncle+Ahmad)
+        const urlParams = new URLSearchParams(window.location.search);
+        const guestParam = urlParams.get('guest');
+        
+        if (guestParam) {
+            // Replaces underscores or plus signs with spaces if used in URL
+            document.getElementById('guestNameDisplay').innerText = decodeURIComponent(guestParam);
+        }
+    </script>
 </body>
 </html>
