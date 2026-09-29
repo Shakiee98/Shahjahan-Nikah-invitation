@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation | Shaan & Dr. Safiya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Great+Vibes&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-purple: #6a4c93;
+            --light-purple: #9b7ede;
+            --text-dark: #333333;
+            --bg-silk: #f4f1eb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-silk);
+            /* Simulating the soft silk texture background effect */
+            background-image: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(200,195,185,0.2) 100%);
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .invite-container {
+            width: 100%;
+            max-width: 480px;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-radius: 15px;
+            padding: 40px 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Bismillah Header */
+        .bismillah {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: var(--primary-purple);
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            color: var(--primary-purple);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            color: var(--primary-purple);
+            margin: 15px 0;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            color: #555;
+            text-transform: uppercase;
+        }
+
+        /* Quranic Verse Box */
+        .verse-section {
+            margin: 30px 0;
+            padding: 20px 10px;
+            border-top: 1px solid rgba(106, 76, 147, 0.2);
+            border-bottom: 1px solid rgba(106, 76, 147, 0.2);
+        }
+
+        .arabic-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 10px;
+            color: #2c2c2c;
+            direction: rtl;
+        }
+
+        .verse-translation {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #666;
+            font-style: italic;
+        }
+
+        .verse-ref {
+            font-size: 0.8rem;
+            margin-top: 5px;
+            color: var(--primary-purple);
+            font-weight: 500;
+        }
+
+        /* Event Details Grid / List */
+        .events-section {
+            margin-top: 30px;
+        }
+
+        .event-card {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary-purple);
+            text-align: left;
+        }
+
+        .event-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: var(--primary-purple);
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .event-details {
+            font-size: 0.9rem;
+            color: #444;
+            line-height: 1.4;
+        }
+
+        /* Footer Message */
+        .footer-msg {
+            font-size: 0.85rem;
+            color: #555;
+            margin-top: 25px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="invite-container">
+        <!-- Top Bismillah -->
+        <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+
+        <div class="title">Wedding Invitation</div>
+        <div class="subtitle">Together with their families</div>
+
+        <div class="names">
+            Shaan <br>
+            <span style="font-size: 2rem; font-family: 'Cinzel', serif;">&</span> <br>
+            Dr. Safiya
+        </div>
+
+        <div class="subtitle">Invite you to their wedding <br><span style="font-size: 0.8rem;">وذلك بمشيئة الله</span></div>
+
+        <!-- Quranic Verse -->
+        <div class="verse-section">
+            <div class="arabic-text">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَWَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِقَوْمٍ يَتَفَكَّرُونَ</div>
+            <div class="verse-translation">"And of His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy. Indeed in that are signs for a people who give thought."</div>
+            <div class="verse-ref">[Ar-Rum: 21]</div>
+        </div>
+
+        <!-- Events Schedule -->
+        <div class="events-section">
+            <div class="event-card">
+                <div class="event-title">💍 Nikah Ceremony</div>
+                <div class="event-details">
+                    <strong>Date:</strong> October 30, 2026<br>
+                    <strong>Time:</strong> 6:00 PM<br>
+                    <strong>Venue:</strong> Rajpura Masjid Mandvi, Vadodara
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-title">🍽️ Walimah</div>
+                <div class="event-details">
+                    <strong>Date:</strong> October 31, 2026<br>
+                    <strong>Time:</strong> 1:00 PM Onwards<br>
+                    <strong>Venue:</strong> Shagun Hall, Harni Road, Vadodara
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-msg">
+            "With hearts full of joy, we warmly invite you and your family to join us in celebrating our wedding."
+        </div>
+    </div>
+
+</body>
+</html>
