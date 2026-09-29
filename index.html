@@ -27,10 +27,10 @@
             min-height: 100vh;
             padding: 20px;
             overflow-x: hidden;
-            background-color: #d8cebc;
+            background: #2b2b2b;
         }
 
-        /* Fullscreen Animated Canvas Background */
+        /* Fullscreen Animated Canvas */
         #silkCanvas {
             position: fixed;
             top: 0;
@@ -40,17 +40,17 @@
             z-index: -1;
         }
 
-        /* Translucent Frosted Glass Card to Show Background Animation */
+        /* Sleek transparent container letting the animation shine through completely */
         .invite-container {
             width: 100%;
             max-width: 480px;
-            background: rgba(255, 255, 255, 0.48); /* Lowered opacity so silk background shines through */
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 20px 45px rgba(92, 60, 132, 0.15);
-            border-radius: 24px;
-            padding: 45px 30px;
+            background: rgba(255, 255, 255, 0.22);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border-radius: 28px;
+            padding: 40px 25px;
             text-align: center;
             position: relative;
             z-index: 1;
@@ -60,8 +60,8 @@
             font-family: 'Great Vibes', cursive;
             font-size: 2.8rem;
             color: var(--primary-purple);
-            margin-bottom: 12px;
-            text-shadow: 0 2px 4px rgba(255,255,255,0.8);
+            margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
         }
 
         .title {
@@ -69,18 +69,19 @@
             font-size: 1.35rem;
             letter-spacing: 3px;
             color: var(--primary-purple);
-            margin-bottom: 8px;
+            margin-bottom: 15px;
             text-transform: uppercase;
             font-weight: 600;
         }
 
-        /* Semi-transparent Guest Box */
+        /* Transparent Guest Name Plate */
         .guest-box {
-            background: rgba(255, 255, 255, 0.5);
-            border: 1px solid rgba(139, 102, 179, 0.3);
+            background: rgba(92, 60, 132, 0.08);
+            border: 1px solid rgba(92, 60, 132, 0.2);
             border-radius: 14px;
-            padding: 14px;
-            margin: 18px 0 22px 0;
+            padding: 12px;
+            margin: 15px 0;
+            backdrop-filter: blur(4px);
         }
 
         .guest-greeting {
@@ -95,7 +96,7 @@
             font-family: 'Cinzel', serif;
             font-size: 1.15rem;
             color: var(--primary-purple);
-            margin-top: 5px;
+            margin-top: 4px;
             font-weight: 600;
         }
 
@@ -103,7 +104,7 @@
             font-size: 0.85rem;
             font-weight: 300;
             letter-spacing: 1.5px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             color: #444;
             text-transform: uppercase;
         }
@@ -113,90 +114,94 @@
             font-size: 3.2rem;
             color: var(--primary-purple);
             line-height: 1.1;
-            margin: 15px 0;
-            text-shadow: 0 2px 4px rgba(255,255,255,0.8);
+            margin: 10px 0;
+            text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
         }
 
         .arabic-sub {
             font-size: 0.85rem;
             color: var(--primary-purple);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-weight: 500;
         }
 
-        /* Translucent Quranic Verse Box */
+        /* Transparent Quranic Verse Section */
         .verse-section {
-            margin: 25px 0;
-            padding: 22px 12px;
-            border-top: 1px solid rgba(92, 60, 132, 0.25);
-            border-bottom: 1px solid rgba(92, 60, 132, 0.25);
-            background: rgba(255, 255, 255, 0.35);
-            border-radius: 10px;
+            margin: 20px 0;
+            padding: 18px 10px;
+            border-top: 1px solid rgba(92, 60, 132, 0.2);
+            border-bottom: 1px solid rgba(92, 60, 132, 0.2);
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
         }
 
         .arabic-text {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             line-height: 1.9;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: #1a1a1a;
             direction: rtl;
         }
 
         .verse-translation {
-            font-size: 0.82rem;
-            line-height: 1.6;
-            color: #444;
+            font-size: 0.8rem;
+            line-height: 1.5;
+            color: #333;
             font-style: italic;
         }
 
         .verse-ref {
-            font-size: 0.78rem;
-            margin-top: 8px;
+            font-size: 0.75rem;
+            margin-top: 6px;
             color: var(--primary-purple);
             font-weight: 600;
             letter-spacing: 1px;
         }
 
+        /* Event Cards with Glass Effect */
         .events-section {
-            margin-top: 25px;
+            margin-top: 20px;
         }
 
         .event-card {
-            background: rgba(255, 255, 255, 0.55);
-            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 14px 16px;
             border-radius: 12px;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             border-left: 4px solid var(--primary-purple);
             text-align: left;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+            border-right: 1px solid rgba(255,255,255,0.3);
+            border-top: 1px solid rgba(255,255,255,0.3);
+            border-bottom: 1px solid rgba(255,255,255,0.3);
         }
 
         .event-title {
             font-family: 'Cinzel', serif;
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--primary-purple);
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             font-weight: 600;
         }
 
         .event-details {
-            font-size: 0.85rem;
-            color: #333;
-            line-height: 1.5;
+            font-size: 0.82rem;
+            color: #222;
+            line-height: 1.4;
         }
 
         .footer-msg {
-            font-size: 0.82rem;
-            color: #444;
-            margin-top: 25px;
-            line-height: 1.6;
+            font-size: 0.8rem;
+            color: #333;
+            margin-top: 20px;
+            line-height: 1.5;
             font-style: italic;
         }
     </style>
 </head>
 <body>
 
-    <!-- Canvas Background Animation -->
+    <!-- Dynamic Flowing Silk Canvas Background -->
     <canvas id="silkCanvas"></canvas>
 
     <div class="invite-container">
@@ -214,7 +219,7 @@
 
         <div class="names">
             Shaan <br>
-            <span style="font-size: 1.6rem; font-family: 'Cinzel', serif; color: var(--light-purple);">&</span> <br>
+            <span style="font-size: 1.5rem; font-family: 'Cinzel', serif; color: var(--light-purple);">&</span> <br>
             Dr. Safiya
         </div>
 
@@ -252,14 +257,14 @@
     </div>
 
     <script>
-        // Guest Name Script
+        // Guest Name Parameter Reader
         const urlParams = new URLSearchParams(window.location.search);
         const guestParam = urlParams.get('guest');
         if (guestParam) {
             document.getElementById('guestNameDisplay').innerText = decodeURIComponent(guestParam);
         }
 
-        // Active Flowing Silk Wave Animation
+        // High-Performance Flowing Silk & Light Wave Canvas Animation
         const canvas = document.getElementById('silkCanvas');
         const ctx = canvas.getContext('2d');
 
@@ -271,47 +276,47 @@
         window.addEventListener('resize', resize);
         resize();
 
-        let time = 0;
-        function animate() {
-            time += 0.015;
+        let t = 0;
+        function renderSilkWaves() {
+            t += 0.012;
             ctx.clearRect(0, 0, width, height);
 
-            // Rich silk gradient base
-            let bgGrad = ctx.createLinearGradient(0, 0, width, height);
-            bgGrad.addColorStop(0, '#f3ece2');
-            bgGrad.addColorStop(0.5, '#e4d8c5');
-            bgGrad.addColorStop(1, '#c8bcab');
-            ctx.fillStyle = bgGrad;
+            // Base rich silk gradient background
+            let baseGrad = ctx.createLinearGradient(0, 0, width, height);
+            baseGrad.addColorStop(0, '#f2ece4');
+            baseGrad.addColorStop(0.5, '#e2d5c3');
+            baseGrad.addColorStop(1, '#c5b59e');
+            ctx.fillStyle = baseGrad;
             ctx.fillRect(0, 0, width, height);
 
-            // Animated light waves flowing across the screen
-            for (let i = 0; i < 3; i++) {
+            // Layered moving satin waves
+            for (let i = 0; i < 4; i++) {
                 ctx.beginPath();
-                ctx.moveTo(0, height * 0.3 * i);
+                ctx.moveTo(0, height);
 
-                let wave1 = Math.sin(time + i * 1.5) * 100;
-                let wave2 = Math.cos(time - i) * 100;
+                let amplitude = 60 + i * 20;
+                let frequency = 0.002 + i * 0.001;
 
-                ctx.bezierCurveTo(
-                    width * 0.25, height * 0.3 + wave1,
-                    width * 0.75, height * 0.7 + wave2,
-                    width, height * 0.4 * i + wave1
-                );
+                for (let x = 0; x <= width; x += 10) {
+                    let y = height * 0.5 + 
+                            Math.sin(x * frequency + t + i) * amplitude + 
+                            Math.cos(t * 0.5 - x * 0.001) * (amplitude * 0.5);
+                    ctx.lineTo(x, y);
+                }
 
                 ctx.lineTo(width, height);
-                ctx.lineTo(0, height);
                 ctx.closePath();
 
                 let waveGrad = ctx.createLinearGradient(0, 0, width, height);
-                waveGrad.addColorStop(0, `rgba(255, 255, 255, ${0.2 + i * 0.1})`);
-                waveGrad.addColorStop(1, `rgba(139, 102, 179, ${0.05 + i * 0.03})`);
+                waveGrad.addColorStop(0, `rgba(255, 255, 255, ${0.15 + i * 0.08})`);
+                waveGrad.addColorStop(1, `rgba(139, 102, 179, ${0.04 + i * 0.03})`);
                 ctx.fillStyle = waveGrad;
                 ctx.fill();
             }
 
-            requestAnimationFrame(animate);
+            requestAnimationFrame(renderSilkWaves);
         }
-        animate();
+        renderSilkWaves();
     </script>
 </body>
 </html>
